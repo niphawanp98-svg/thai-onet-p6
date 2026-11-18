@@ -1,0 +1,106 @@
+/* Custom styles for Thai Idioms & O-NET Web App */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Tab button active state */
+.tab-btn {
+  color: rgba(255, 255, 255, 0.85);
+  background-color: transparent;
+}
+
+.tab-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.tab-btn.active-tab {
+  background-color: #ffffff;
+  color: #b45309; /* amber-700 */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Category chip active state */
+.category-chip.active {
+  background-color: #f59e0b;
+  color: white;
+  border-color: #f59e0b;
+}
+
+/* Filter buttons */
+.filter-type-btn.active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Certificate layout */
+.cert-sheet {
+  background-image: radial-gradient(#fde68a 0.75px, transparent 0.75px), radial-gradient(#fde68a 0.75px, #ffffff 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+.cert-corner {
+  position: absolute;
+  user-select: none;
+}
+
+/* Print Styles for Certificate */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  
+  #printableCertificate, #printableCertificate * {
+    visibility: visible;
+  }
+  
+  #printableCertificate {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 30px;
+    border: 8px double #b45309 !important;
+    box-shadow: none !important;
+    transform: scale(0.95);
+    transform-origin: center top;
+  }
+  
+  @page {
+    size: landscape;
+    margin: 10mm;
+  }
+}
+
+/* Smooth card transitions */
+.idiom-card {
+  transition: all 0.25s ease-out;
+}
+
+.idiom-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.08);
+}
+
+/* Custom scrollbars */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
